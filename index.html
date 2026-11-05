@@ -3,45 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLANK TEXT GENERATOR - Free Online Copy Paste Tool</title>
+    <title id="seo-title">Invisible Name Generator & Copy Paste Tool</title>
     <style>
-        body { font-family: system-ui, sans-serif; background: #0b0f19; color: #f1f5f9; text-align: center; padding: 20px; }
-        .box { max-width: 500px; margin: 40px auto; background: #151d30; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        h1 { color: #38bdf8; font-size: 1.8rem; margin-bottom: 5px; }
-        p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px; }
-        textarea { width: 100%; height: 100px; background: #0b0f19; border: 2px solid #1e293b; border-radius: 6px; color: #fff; padding: 10px; box-sizing: border-box; resize: none; font-size: 1rem; }
+        body { font-family: system-ui, sans-serif; background: #0b0f19; color: #f1f5f9; text-align: center; padding: 20px; margin: 0; }
+        .box { max-width: 500px; margin: 30px auto; background: #151d30; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h1 { color: #38bdf8; font-size: 1.8rem; margin-bottom: 5px; text-transform: capitalize; }
+        p { color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+        textarea { width: 100%; height: 90px; background: #0b0f19; border: 2px solid #1e293b; border-radius: 6px; color: #fff; padding: 10px; box-sizing: border-box; resize: none; font-size: 1.2rem; text-align: center; }
         button { background: #38bdf8; color: #0b0f19; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 15px; }
         .ad { background: rgba(255,255,255,0.03); border: 1px dashed #334155; margin: 20px auto; padding: 15px; max-width: 500px; min-height: 90px; color: #475569; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+        .links-grid { max-width: 500px; margin: 20px auto; text-align: left; background: #151d30; padding: 20px; border-radius: 12px; }
+        .links-grid a { color: #38bdf8; display: block; margin: 8px 0; font-size: 0.9rem; text-decoration: none; }
+        .links-grid a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <div class="ad">
-        <!-- PASTE ADSTERRA BANNER CODE 1 HERE -->
-        [TOP AD ADSTERRA BANNER PLACEHOLDER]
+        <!-- TOP ADSTERRA BANNER CODE HERE -->
+        [TOP AD PLACEHOLDER]
     </div>
 
     <div class="box">
-        <h1>Blank Text Generator</h1>
-        <p>Easily create and copy invisible blank spaces for social media bios, nicknames, and chat apps.</p>
+        <h1 id="main-title">Invisible Character Generator</h1>
+        <p id="main-desc">Easily create and copy invisible blank spaces for social media bios, nicknames, and chat apps.</p>
         <textarea id="output" readonly>ㅤ</textarea>
         <button onclick="copyBlank()">Copy Invisible Text</button>
     </div>
 
+    <!-- SITE MAP LINKS FOR GOOGLE TO CRAWL THOUSANDS OF PAGES -->
+    <div class="links-grid">
+        <h3 style="margin-top:0; color:#fff;">Supported Platforms:</h3>
+        <div id="links-container"></div>
+    </div>
+
     <div class="ad">
-        <!-- PASTE ADSTERRA BANNER CODE 2 HERE -->
-        [BOTTOM AD ADSTERRA BANNER PLACEHOLDER]
+        <!-- BOTTOM ADSTERRA BANNER CODE HERE -->
+        [BOTTOM AD PLACEHOLDER]
     </div>
 
     <script>
+        // MASSIVE DATABASE OF KEYWORDS
+        const niches = [
+            "pubg", "free-fire", "roblox", "tiktok", "instagram", "fortnite", "cod-mobile", 
+            "clash-of-clans", "discord", "whatsapp", "telegram", "facebook", "twitter-x", 
+            "apex-legends", "minecraft", "valorant", "league-of-legends", "among-us", "snapchat"
+        ];
+
+        function initMassiveSite() {
+            // 1. Read the URL parameters (?game=pubg)
+            const urlParams = new URLSearchParams(window.location.search);
+            let game = urlParams.get('game');
+
+            // 2. Default landing page if no parameter is selected
+            if (!game) {
+                game = "social-media";
+            }
+
+            // Clean the text layout for the user and search engines
+            let cleanName = game.replace(/-/g, ' ');
+
+            // 3. Dynamically rewrite the page content for SEO instantly
+            document.title = `Invisible Name for ${cleanName.toUpperCase()} - Copy Paste Space`;
+            document.getElementById("main-title").innerText = `Invisible Name for ${cleanName}`;
+            document.getElementById("main-desc").innerText = `Need a blank name or an invisible character space for ${cleanName}? Click the button below to generate and copy it to your clipboard instantly for free.`;
+
+            // 4. Automatically build the site map grid so Google indexes everything
+            const container = document.getElementById("links-container");
+            niches.forEach(n => {
+                let a = document.createElement('a');
+                a.href = `?game=${n}`;
+                a.innerText = `➔ Invisible Text Generator for ${n.replace(/-/g, ' ').toUpperCase()}`;
+                container.appendChild(a);
+            });
+        }
+
         function copyBlank() {
             var copyText = document.getElementById("output");
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
-            alert("Invisible blank space copied successfully!");
+            alert("Invisible space copied!");
         }
+
+        window.onload = initMassiveSite;
     </script>
 </body>
 </html>
-
