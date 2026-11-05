@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- MONETAG VERIFICATION -->
+    <meta name="monetag" content="69de0ae2199d8d09cd14dbb19b0f01a7">
+    
+    <!-- GOOGLE SITE VERIFICATION -->
+    <meta name="google-site-verification" content="wqDVEHvuQ14lzMtLiEWIOLE-gQHNpV_k75GhLLfVGdA" />
+
     <title id="seo-title">Invisible Name Generator & Copy Paste Tool</title>
     <style>
         body { font-family: system-ui, sans-serif; background: #0b0f19; color: #f1f5f9; text-align: center; padding: 20px; margin: 0; }
@@ -13,15 +20,17 @@
         button { background: #38bdf8; color: #0b0f19; border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 15px; }
         .ad { background: rgba(255,255,255,0.03); border: 1px dashed #334155; margin: 20px auto; padding: 15px; max-width: 500px; min-height: 90px; color: #475569; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
         .links-grid { max-width: 500px; margin: 20px auto; text-align: left; background: #151d30; padding: 20px; border-radius: 12px; }
-        .links-grid a { color: #38bdf8; display: block; margin: 8px 0; font-size: 0.9rem; text-decoration: none; }
-        .links-grid a:hover { text-decoration: underline; }
+        .links-grid h3 { margin-top:0; color:#fff; border-bottom: 1px solid #334155; padding-bottom: 8px;}
+        .links-scroll { max-height: 300px; overflow-y: scroll; padding-right: 5px; }
+        .links-scroll a { color: #38bdf8; display: block; margin: 8px 0; font-size: 0.85rem; text-decoration: none; }
+        .links-scroll a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <div class="ad">
-        <!-- TOP ADSTERRA BANNER CODE HERE -->
-        [TOP AD PLACEHOLDER]
+        <!-- PASTE YOUR MONETAG AD TAG HERE -->
+        [TOP MONETAG AD PLACEHOLDER]
     </div>
 
     <div class="box">
@@ -31,51 +40,70 @@
         <button onclick="copyBlank()">Copy Invisible Text</button>
     </div>
 
-    <!-- SITE MAP LINKS FOR GOOGLE TO CRAWL THOUSANDS OF PAGES -->
+    <!-- GIANT PROGRAMMATIC LINKS GRID FOR MASSIVE GOOGLE INDEXING -->
     <div class="links-grid">
-        <h3 style="margin-top:0; color:#fff;">Supported Platforms:</h3>
-        <div id="links-container"></div>
+        <h3 id="grid-title">All Target Platforms</h3>
+        <div class="links-scroll" id="links-container"></div>
     </div>
 
     <div class="ad">
-        <!-- BOTTOM ADSTERRA BANNER CODE HERE -->
-        [BOTTOM AD PLACEHOLDER]
+        <!-- PASTE YOUR SECOND MONETAG AD TAG HERE -->
+        [BOTTOM MONETAG AD PLACEHOLDER]
     </div>
 
     <script>
-        // MASSIVE DATABASE OF KEYWORDS
-        const niches = [
+        // MASSIVE PROGRAMMATIC MULTIPLIER (Combines platforms with search prefixes for 1,000s of variants)
+        const categories = ["game", "social", "app"];
+        
+        const platforms = [
             "pubg", "free-fire", "roblox", "tiktok", "instagram", "fortnite", "cod-mobile", 
             "clash-of-clans", "discord", "whatsapp", "telegram", "facebook", "twitter-x", 
-            "apex-legends", "minecraft", "valorant", "league-of-legends", "among-us", "snapchat"
+            "apex-legends", "minecraft", "valorant", "league-of-legends", "among-us", "snapchat",
+            "bgmi", "gta-v", "clash-royale", "brawl-stars", "mobile-legends", "pubg-lite", "free-fire-max",
+            "threads", "pinterest", "reddit", "twitch", "kick", "youtube", "skype", "zoom", "teams",
+            "steam", "epic-games", "playstation", "xbox", "nintendo", "ea-sports", "efootball"
+        ];
+
+        const prefixes = [
+            "invisible-name-for", "blank-space-generator-for", "invisible-character-for", 
+            "empty-text-copy-paste-for", "hide-name-in", "space-code-for", "blank-bio-text-for", 
+            "space-bar-character-for", "hidden-nickname-code-for", "invisible-unicode-for",
+            "zero-width-space-for", "blank-name-glitch-for", "invisible-letter-for",
+            "empty-status-text-for", "invisible-text-copy-paste-for", "blank-space-code-for"
         ];
 
         function initMassiveSite() {
-            // 1. Read the URL parameters (?game=pubg)
             const urlParams = new URLSearchParams(window.location.search);
-            let game = urlParams.get('game');
+            let target = urlParams.get('p'); // Reads ?p=invisible-name-for-pubg
 
-            // 2. Default landing page if no parameter is selected
-            if (!game) {
-                game = "social-media";
+            if (!target) {
+                target = "invisible-character-generator";
             }
 
-            // Clean the text layout for the user and search engines
-            let cleanName = game.replace(/-/g, ' ');
+            let cleanName = target.replace(/-/g, ' ');
 
-            // 3. Dynamically rewrite the page content for SEO instantly
-            document.title = `Invisible Name for ${cleanName.toUpperCase()} - Copy Paste Space`;
-            document.getElementById("main-title").innerText = `Invisible Name for ${cleanName}`;
-            document.getElementById("main-desc").innerText = `Need a blank name or an invisible character space for ${cleanName}? Click the button below to generate and copy it to your clipboard instantly for free.`;
+            // Dynamic SEO updates that Google will crawl and index
+            document.title = `${cleanName.toUpperCase()} - 100% Free Copy Paste`;
+            document.getElementById("main-title").innerText = cleanName;
+            document.getElementById("main-desc").innerText = `Need an updated 2026 trick for ${cleanName}? Tap the button below to generate the functional hidden character code and copy it directly to your clipboard for free.`;
 
-            // 4. Automatically build the site map grid so Google indexes everything
+            // AUTOMATICALLY GENERATE HUNDREDS OF INTERNAL LINKS IN THE FOOTER
             const container = document.getElementById("links-container");
-            niches.forEach(n => {
-                let a = document.createElement('a');
-                a.href = `?game=${n}`;
-                a.innerText = `➔ Invisible Text Generator for ${n.replace(/-/g, ' ').toUpperCase()}`;
-                container.appendChild(a);
+            
+            // Loops through combinations to create cross-links for the Google Bot
+            prefixes.forEach(prefix => {
+                platforms.forEach(platform => {
+                    let parameterValue = `${prefix}-${platform}`;
+                    let linkText = parameterValue.replace(/-/g, ' ').toUpperCase();
+                    
+                    let a = document.createElement('a');
+                    a.href = `?p=${parameterValue}`;
+                    a.innerText = `➔ ${linkText}`;
+                    container.appendChild(a);
+                });
             });
+            
+            document.getElementById("grid-title").innerText = `Browse All Generated Tools (${container.children.length} Pages Available)`;
         }
 
         function copyBlank() {
@@ -83,7 +111,7 @@
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
-            alert("Invisible space copied!");
+            alert("Invisible code copied!");
         }
 
         window.onload = initMassiveSite;
